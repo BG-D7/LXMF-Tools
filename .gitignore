@@ -1,0 +1,12 @@
+/venv/
+/lxmf_distribution_group_minimal_matterbridge/config.cfg
+/lxmf_distribution_group_minimal_matterbridge/config.cfg.owr
+/lxmf_distribution_group_minimal_matterbridge/data.cfg
+/lxmf_distribution_group_minimal_matterbridge/identity
+/lxmf_distribution_group_minimal_matterbridge/lxmf/
+/.idea/.gitignore
+/.idea/LXMF-Tools.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/vcs.xml

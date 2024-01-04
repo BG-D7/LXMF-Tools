@@ -64,9 +64,9 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
   ```bash
   nano /.reticulum/config
   ```
-- Laden Sie die [Datei](lxmf_distribution_group_minimal.py) aus diesem Repository herunter.
+- Laden Sie die [Datei](lxmf_distribution_group_minimal_matterbridge.py) aus diesem Repository herunter.
   ```bash
-  wget https://raw.githubusercontent.com/SebastianObi/LXMF-Tools/main/lxmf_distribution_group_minimal/lxmf_distribution_group_minimal.py
+  wget https://raw.githubusercontent.com/BG-D7/LXMF-Tools/main/lxmf_distribution_group_minimal/lxmf_distribution_group_minimal_matterbridge.py
   ```
 - Machen Sie es mit folgendem Befehl ausführbar
   ```bash

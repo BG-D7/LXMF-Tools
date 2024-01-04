@@ -1,5 +1,5 @@
-# lxmf_distribution_group_minimal
-This program is a minimalist version of the normal distribution group. The functionality is reduced to a minimum. Only sender and receiver users can be defined. Messages are then sent to the other users accordingly. There is no user interface or other notifications. Only the messages are distributed 1:1. The administration is done completely by the respective configuration files which are to be edited accordingly.
+# lxmf_distribution_group_minimal_matterbridge_matterbridge
+This program is a minimalist version of the normal distribution group but with support of matterbridge api. The functionality is reduced to a minimum. Only sender and receiver users can be defined. Messages are then sent to the other users accordingly. There is no user interface or other notifications. Only the messages are distributed 1:1. The administration is done completely by the respective configuration files which are to be edited accordingly.
 
 For more information, see the configuration options (at the end of the program files). Everything else is briefly documented there. After the first start this configuration will be created as default config in the corresponding file.
 
@@ -37,8 +37,8 @@ There may be errors or the compatibility after an update is no longer guaranteed
 The full documentation is not yet available. Due to lack of time I can also not say when this will be further processed.
 
 
-## Screenshots / Usage examples
-<img src="../docs/screenshots/lxmf_distribution_group_minimal_01.png" width="200px"><img src="../docs/screenshots/lxmf_distribution_group_minimal_02.png" width="200px"><img src="../docs/screenshots/lxmf_distribution_group_minimal_03.png" width="200px">
+## Screenshots / Usage examples (NEEDS TO SCREENSHOT NEW FUNCTIONALITY)
+<img src="../docs/screenshots/lxmf_distribution_group_minimal_matterbridge_01.png" width="200px"><img src="../docs/screenshots/lxmf_distribution_group_minimal_matterbridge_02.png" width="200px"><img src="../docs/screenshots/lxmf_distribution_group_minimal_matterbridge_03.png" width="200px">
 
 
 ## Installation manual
@@ -63,24 +63,24 @@ The full documentation is not yet available. Due to lack of time I can also not 
   ```bash
   nano /.reticulum/config
   ```
-- Download the [file](lxmf_distribution_group_minimal.py) from this repository.
+- Download the [file](lxmf_distribution_group_minimal_matterbridge_matterbridge.py) from this repository.
   ```bash
-  wget https://raw.githubusercontent.com/SebastianObi/LXMF-Tools/main/lxmf_distribution_group_minimal/lxmf_distribution_group_minimal.py
+  wget https://raw.githubusercontent.com/BG-D7/LXMF-Tools/main/lxmf_distribution_group_minimal_matterbridge/lxmf_distribution_group_minimal_matterbridge_matterbridge.py
   ```
 - Make it executable with the following command
   ```bash
-  chmod +x lxmf_distribution_group_minimal_matterbridge.py
+  chmod +x lxmf_distribution_group_minimal_matterbridge_matterbridge.py
   ```
 
 ### Start:
 - Start it
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal_matterbridge_matterbridge.py
   ```
 - After the first start edit the configuration file to suit your needs and use-case. The file location is displayed.
 - Example minimal configuration (override of the default config `config.cfg`). These are the most relevant settings that need to be adjusted. All other settings are in `config.cfg`
   ```bash
-  nano /root/.lxmf_distribution_group_minimal/config.cfg.owr
+  nano /root/.lxmf_distribution_group_minimal_matterbridge/config.cfg.owr
   ```
   ```bash
   # This is the user configuration file to override the default configuration file.
@@ -108,19 +108,19 @@ The full documentation is not yet available. Due to lack of time I can also not 
   ```
 - Start it again. Finished!
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal_matterbridge_matterbridge.py
   ```
 
 
 ### Run as a system service/deamon:
 - Create a service file.
   ```bash
-  nano /etc/systemd/system/lxmf_distribution_group_minimal_matterbridge.service
+  nano /etc/systemd/system/lxmf_distribution_group_minimal_matterbridge_matterbridge.service
   ```
 - Copy and edit the following content to your own needs.
   ```bash
   [Unit]
-  Description=lxmf_distribution_group_minimal_matterbridge.py Daemon
+  Description=lxmf_distribution_group_minimal_matterbridge_matterbridge.py Daemon
   After=multi-user.target
   [Service]
   # ExecStartPre=/bin/sleep 10
@@ -129,39 +129,39 @@ The full documentation is not yet available. Due to lack of time I can also not 
   RestartSec=3
   User=root
   Group=root
-  ExecStart=/root/lxmf_distribution_group_minimal_matterbridge.py
+  ExecStart=/root/lxmf_distribution_group_minimal_matterbridge_matterbridge.py
   [Install]
   WantedBy=multi-user.target
   ```
 - Enable the service.
   ```bash
-  systemctl enable lxmf_distribution_group_minimal
+  systemctl enable lxmf_distribution_group_minimal_matterbridge
   ```
 - Start the service.
   ```bash
-  systemctl start lxmf_distribution_group_minimal
+  systemctl start lxmf_distribution_group_minimal_matterbridge
   ```
 
 
 ### Start/Stop service:
   ```bash
-  systemctl start lxmf_distribution_group_minimal
-  systemctl stop lxmf_distribution_group_minimal
+  systemctl start lxmf_distribution_group_minimal_matterbridge
+  systemctl stop lxmf_distribution_group_minimal_matterbridge
   ```
 
 
 ### Enable/Disable service:
   ```bash
-  systemctl enable lxmf_distribution_group_minimal
-  systemctl disable lxmf_distribution_group_minimal
+  systemctl enable lxmf_distribution_group_minimal_matterbridge
+  systemctl disable lxmf_distribution_group_minimal_matterbridge
   ```
 
 
 ### Run several instances (To copy the same application):
 - Run the program with a different configuration path.
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_2nd
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_3nd
+  ./lxmf_distribution_group_minimal_matterbridge_matterbridge.py -p /root/.lxmf_distribution_group_minimal_matterbridge_2nd
+  ./lxmf_distribution_group_minimal_matterbridge_matterbridge.py -p /root/.lxmf_distribution_group_minimal_matterbridge_3nd
   ```
 - After the first start edit the configuration file to suit your needs and use-case. The file location is displayed.
 
@@ -180,7 +180,7 @@ The full documentation is not yet available. Due to lack of time I can also not 
 
 ### Startup parameters:
 ```bash
-usage: lxmf_distribution_group_minimal_matterbridge.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
+usage: lxmf_distribution_group_minimal_matterbridge_matterbridge.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
 
 LXMF Distribution Group - Server-Side group functions for LXMF based apps
 
