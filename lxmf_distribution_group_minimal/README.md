@@ -69,13 +69,13 @@ The full documentation is not yet available. Due to lack of time I can also not 
   ```
 - Make it executable with the following command
   ```bash
-  chmod +x lxmf_distribution_group_minimal_matterbridge.py
+  chmod +x lxmf_distribution_group_minimal.py
   ```
 
 ### Start:
 - Start it
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal.py
   ```
 - After the first start edit the configuration file to suit your needs and use-case. The file location is displayed.
 - Example minimal configuration (override of the default config `config.cfg`). These are the most relevant settings that need to be adjusted. All other settings are in `config.cfg`
@@ -108,19 +108,19 @@ The full documentation is not yet available. Due to lack of time I can also not 
   ```
 - Start it again. Finished!
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal.py
   ```
 
 
 ### Run as a system service/deamon:
 - Create a service file.
   ```bash
-  nano /etc/systemd/system/lxmf_distribution_group_minimal_matterbridge.service
+  nano /etc/systemd/system/lxmf_distribution_group_minimal.service
   ```
 - Copy and edit the following content to your own needs.
   ```bash
   [Unit]
-  Description=lxmf_distribution_group_minimal_matterbridge.py Daemon
+  Description=lxmf_distribution_group_minimal.py Daemon
   After=multi-user.target
   [Service]
   # ExecStartPre=/bin/sleep 10
@@ -129,7 +129,7 @@ The full documentation is not yet available. Due to lack of time I can also not 
   RestartSec=3
   User=root
   Group=root
-  ExecStart=/root/lxmf_distribution_group_minimal_matterbridge.py
+  ExecStart=/root/lxmf_distribution_group_minimal.py
   [Install]
   WantedBy=multi-user.target
   ```
@@ -160,8 +160,8 @@ The full documentation is not yet available. Due to lack of time I can also not 
 ### Run several instances (To copy the same application):
 - Run the program with a different configuration path.
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_2nd
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_3nd
+  ./lxmf_distribution_group_minimal.py -p /root/.lxmf_distribution_group_minimal_2nd
+  ./lxmf_distribution_group_minimal.py -p /root/.lxmf_distribution_group_minimal_3nd
   ```
 - After the first start edit the configuration file to suit your needs and use-case. The file location is displayed.
 
@@ -180,7 +180,7 @@ The full documentation is not yet available. Due to lack of time I can also not 
 
 ### Startup parameters:
 ```bash
-usage: lxmf_distribution_group_minimal_matterbridge.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
+usage: lxmf_distribution_group_minimal.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
 
 LXMF Distribution Group - Server-Side group functions for LXMF based apps
 

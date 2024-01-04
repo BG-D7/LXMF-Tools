@@ -70,13 +70,13 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
   ```
 - Machen Sie es mit folgendem Befehl ausführbar
   ```bash
-  chmod +x lxmf_distribution_group_minimal_matterbridge.py
+  chmod +x lxmf_distribution_group_minimal.py
   ```
 
 ### Starten:
 - Starten mit
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal.py
   ```
 - Nach dem ersten Start bearbeiten Sie die Konfigurationsdatei, um sie an Ihre Bedürfnisse und Ihren Anwendungsfall anzupassen. Der Speicherort der Datei wird angezeigt.
 - Beispiel einer Minimalkonfiguration (Überschreibung der Standardkonfiguration `config.cfg`). Dies sind die wichtigsten Einstellungen, die angepasst werden müssen. Alle anderen Einstellungen befinden sich in `config.cfg`.
@@ -106,19 +106,19 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
   ```
 - Starten Sie erneut. Fertig!
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py
+  ./lxmf_distribution_group_minimal.py
   ```
 
 
 ### Als Systemdienst/Dämon ausführen:
 - Erstellen einer Servicedatei.
   ```bash
-  nano /etc/systemd/system/lxmf_distribution_group_minimal_matterbridge.service
+  nano /etc/systemd/system/lxmf_distribution_group_minimal.service
   ```
 - Kopieren Sie den folgenden Inhalt und passen Sie ihn an Ihre eigenen Bedürfnisse an.
   ```bash
   [Unit]
-  Description=lxmf_distribution_group_minimal_matterbridge.py Daemon
+  Description=lxmf_distribution_group_minimal.py Daemon
   After=multi-user.target
   [Service]
   # ExecStartPre=/bin/sleep 10
@@ -126,7 +126,7 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
   Restart=always
   RestartSec=3
   User=root
-  ExecStart=/root/lxmf_distribution_group_minimal_matterbridge.py
+  ExecStart=/root/lxmf_distribution_group_minimal.py
   [Install]
   WantedBy=multi-user.target
   ```
@@ -157,8 +157,8 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
 ### Führen Sie mehrere Instanzen aus (Kopieren der gleichen Anwendung):
 - Führen Sie das Programm mit einem anderen Konfigurationspfad aus.
   ```bash
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_2nd
-  ./lxmf_distribution_group_minimal_matterbridge.py -p /root/.lxmf_distribution_group_minimal_3nd
+  ./lxmf_distribution_group_minimal.py -p /root/.lxmf_distribution_group_minimal_2nd
+  ./lxmf_distribution_group_minimal.py -p /root/.lxmf_distribution_group_minimal_3nd
   ```
 - Nach dem ersten Start bearbeiten Sie die Konfigurationsdatei, um sie an Ihre Bedürfnisse und Ihren Anwendungsfall anzupassen. Der Speicherort der Datei wird angezeigt.
 
@@ -177,7 +177,7 @@ Die vollständige Dokumentation ist noch nicht verfügbar. Aus Zeitmangel kann i
 
 ### Parameter für die Inbetriebnahme:
 ```bash
-usage: lxmf_distribution_group_minimal_matterbridge.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
+usage: lxmf_distribution_group_minimal.py [-h] [-p PATH] [-pr PATH_RNS] [-pl PATH_LOG] [-l LOGLEVEL] [-s] [--exampleconfig] [--exampleconfigoverride] [--exampledata]
 
 LXMF Distribution Group - Server-seitige Gruppenfunktionen für LXMF-basierte Anwendungen
 
